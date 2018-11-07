@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  serial_film: MyString
+  bahasa: MyString
+  sutradara: MyString
+  durasi: MyString
+  sinopsis: MyText
+  tanggal_rilis: 2018-11-07
+
+two:
+  title: MyString
+  serial_film: MyString
+  bahasa: MyString
+  sutradara: MyString
+  durasi: MyString
+  sinopsis: MyText
+  tanggal_rilis: 2018-11-07

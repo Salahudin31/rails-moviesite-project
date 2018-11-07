@@ -1,0 +1,47 @@
+<%= provide(:title, "Movies") %>
+<div class="container">   
+<% if !flash[:notice].blank? %>   
+   <div>   
+      <%= flash[:notice] %>   
+   </div>   
+<% end %>   
+  
+<br>   
+  
+<%= link_to "New Movies", new_movie_path %>
+<br>   
+<br>   
+  
+<table class="table table-dark table-striped">
+   <thead>
+      <tr>   
+         <th>No movie</th>   
+         <th>Gambar</th>   
+         <th>ID Jenis</th>   
+         <th>ID Bangku</th>   
+         <th>Fasilitas</th>   
+         <th>Action</th>   
+      </tr>   
+   </thead>   
+      
+   <tbody>   
+      <% @movies.each do |movie| %> 
+            
+         <tr>   
+            <td><%= movie.title %></td>   
+            <td><%= image_tag url_for(movie.gambar_movie_url), :class => "img-fluid rounded" %></td>
+            <td><%= movie.serial_film %></td>  
+            <td><%= movie.bahasa %></td>  
+            <td><%= movie.sutradara %></td>
+            <td><%= movie.durasi %></td>
+            <td><%= movie.sinopsis %></td>
+            <td><%= movie.tanggal_rilis %></td>
+            <td><%= movie.link_movie %></td>
+    		   <td><%= link_to 'Show', movie_path(movie) %> | <%= link_to "Delete",  movie, method: :delete, confirm: "Are you sure you want to delete #{movie.title}?" %></td>   
+         </tr>   
+            
+      <% end %>   
+   </tbody>   
+      
+</table>   
+</div>  
